@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "624198427761",
+    "project_id": "flex-app-fcb6b",
+    "storage_bucket": "flex-app-fcb6b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624198427761:android:af9332117a2101f768e7d0",
+        "android_client_info": {
+          "package_name": "com.yummatech.flexapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf8owATqVAalILzssIPcWzhXpx1Bzzkc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

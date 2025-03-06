@@ -1,0 +1,56 @@
+# Flex App Project Rules
+
+## Feedback
+
+- Start every reply with a emoji that best describes the tone of the reply
+
+## Font Usage
+
+- Fonts are loaded in app/\_layout.tsx using expo-font
+- Available fonts:
+  - NotoSans-Regular
+  - NotoSans-Medium
+  - NotoSans-SemiBold
+  - NotoSans-Bold
+- Use StyleSheet to apply these fonts to text components
+- Example: `fontFamily: "NotoSans-Regular"`
+
+## Project Structure
+
+- Use expo-router for navigation
+- Main app code is in the /app directory
+- Assets (images, fonts) are in the /assets directory
+
+## Styling Conventions
+
+- Use React Native StyleSheet for styling
+- Prefer component-specific styles over inline styles
+- Example:
+
+```tsx
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: "NotoSans-Regular",
+    fontSize: 16,
+  },
+});
+```
+
+## Theme Usage
+
+- Import theme hooks from hooks directory: `import { useTheme, createThemedStyles } from '../hooks'`
+- Access current theme with useTheme hook: `const theme = useTheme()`
+- Create themed styles with createThemedStyles: `StyleSheet.create(createThemedStyles(theme => ({ ... })))`
+- Theme properties: colors, spacing, borderRadius, typography, elevation, animation
+- Support for light/dark modes is automatic
+
+## Component Structure
+
+- Keep components focused on a single responsibility
+- Extract reusable UI elements into separate components
+- Follow React Native best practices for performance
+
+## TypeScript
+
+- Use proper TypeScript types for all components and functions
+- Define interfaces for component props
