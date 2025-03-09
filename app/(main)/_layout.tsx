@@ -1,5 +1,5 @@
 import { Stack, Redirect } from "expo-router";
-import { useAuth } from "../../context/auth";
+import { useAuth } from "../../contexts/auth";
 import { View, ActivityIndicator } from "react-native";
 import { useTheme } from "../../hooks";
 
@@ -20,8 +20,15 @@ export default function Layout() {
   }
 
   return (
-    <Stack>
+    <Stack initialRouteName="(tabs)">
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="inspector/inspection-modal"
+        options={{
+          presentation: "modal",
+          presentationStyle: "pageSheet",
+        }}
+      />
     </Stack>
   );
 }

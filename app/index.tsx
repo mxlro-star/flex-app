@@ -1,10 +1,24 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import { Text, View, StyleSheet, ActivityIndicator } from "react-native";
+import { Link, Redirect } from "expo-router";
 import { useTheme, createThemedStyles } from "../hooks";
+import { useAuth } from "../contexts/auth";
 
 export default function Index() {
   const theme = useTheme();
+  const { user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" color={theme.colors.primary[500]} />
+      </View>
+    );
+  }
+
+  if (!isLoading && user) {
+    return <Redirect href="/(main)/(tabs)" />;
+  }
 
   const styles = StyleSheet.create(
     createThemedStyles((theme) => ({
